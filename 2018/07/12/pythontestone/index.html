@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Python 的基础语法 | 日常技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="print函数语法格式：print(value,….,sep=””,end=”\n”)12345678$ 其中，value代表我们要输出的内容，可以是字符串，可以是数值等内容。　Sep   代表输出多个值之间的间隔符，默认使用空格隔开。我们可以重新定义其它内容，比如采用：#,，等。如：print(1,2,3,sep=&quot;#&quot;)    =&amp;gt;1#2#3end代表输出语句的结束标识，默认使用了换行，">
+  <meta name="description" content="print函数语法格式：print(value,….,sep=””,end=”\n”)其中，value代表我们要输出的内容，可以是字符串，可以是数值等内容。　   sep代表输出多个值之间的间隔符，默认使用空格隔开。我们可以重新定义其它内容，比如采用：#,，等。     end代表输出语句的结束标识，默认使用了换行，我们可以重新定义其他内容，其输出的内容将不再进行换行操作。12$ print(1,">
 <meta name="keywords" content="Python、爬虫、Web开发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python 的基础语法">
 <meta property="og:url" content="http://yoursite.com/2018/07/12/pythontestone/index.html">
 <meta property="og:site_name" content="日常技术博客">
-<meta property="og:description" content="print函数语法格式：print(value,….,sep=””,end=”\n”)12345678$ 其中，value代表我们要输出的内容，可以是字符串，可以是数值等内容。　Sep   代表输出多个值之间的间隔符，默认使用空格隔开。我们可以重新定义其它内容，比如采用：#,，等。如：print(1,2,3,sep=&quot;#&quot;)    =&amp;gt;1#2#3end代表输出语句的结束标识，默认使用了换行，">
+<meta property="og:description" content="print函数语法格式：print(value,….,sep=””,end=”\n”)其中，value代表我们要输出的内容，可以是字符串，可以是数值等内容。　   sep代表输出多个值之间的间隔符，默认使用空格隔开。我们可以重新定义其它内容，比如采用：#,，等。     end代表输出语句的结束标识，默认使用了换行，我们可以重新定义其他内容，其输出的内容将不再进行换行操作。12$ print(1,">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-12T00:45:44.405Z">
+<meta property="og:updated_time" content="2018-07-12T01:09:52.518Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 的基础语法">
-<meta name="twitter:description" content="print函数语法格式：print(value,….,sep=””,end=”\n”)12345678$ 其中，value代表我们要输出的内容，可以是字符串，可以是数值等内容。　Sep   代表输出多个值之间的间隔符，默认使用空格隔开。我们可以重新定义其它内容，比如采用：#,，等。如：print(1,2,3,sep=&quot;#&quot;)    =&amp;gt;1#2#3end代表输出语句的结束标识，默认使用了换行，">
+<meta name="twitter:description" content="print函数语法格式：print(value,….,sep=””,end=”\n”)其中，value代表我们要输出的内容，可以是字符串，可以是数值等内容。　   sep代表输出多个值之间的间隔符，默认使用空格隔开。我们可以重新定义其它内容，比如采用：#,，等。     end代表输出语句的结束标识，默认使用了换行，我们可以重新定义其他内容，其输出的内容将不再进行换行操作。12$ print(1,">
   
     <link rel="alternative" href="/atom.xml" title="日常技术博客" type="application/atom+xml">
   
@@ -179,8 +179,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="print函数"><a href="#print函数" class="headerlink" title="print函数"></a>print函数</h2><h3 id="语法格式：print-value-…-sep-””-end-”-n”"><a href="#语法格式：print-value-…-sep-””-end-”-n”" class="headerlink" title="语法格式：print(value,….,sep=””,end=”\n”)"></a>语法格式：print(value,….,sep=””,end=”\n”)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ 其中，value代表我们要输出的内容，可以是字符串，可以是数值等内容。</span><br><span class="line">　Sep   代表输出多个值之间的间隔符，默认使用空格隔开。我们可以重新定义其它内容，比如采用：<span class="comment">#,，等。</span></span><br><span class="line">如：<span class="built_in">print</span>(1,2,3,sep=<span class="string">"#"</span>)</span><br><span class="line">    =&gt;1<span class="comment">#2#3</span></span><br><span class="line">end代表输出语句的结束标识，默认使用了换行，我们可以重新定义其他内容，其输出的内容将不再进行换行操作。</span><br><span class="line">如：<span class="built_in">print</span>(<span class="string">'adffa\nujia'</span>)</span><br><span class="line">   =&gt;adffa</span><br><span class="line">     ujia</span><br></pre></td></tr></table></figure>
-<h3 id="print-函数的基本使用"><a href="#print-函数的基本使用" class="headerlink" title="print()函数的基本使用"></a>print()函数的基本使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">$ Print（）常用输出方式：</span><br><span class="line">Print(‘hello’),<span class="built_in">print</span>(123)等</span><br><span class="line">字符串格式化：%s %d %f </span><br><span class="line">%s:代表字符串内容，其中</span><br><span class="line">如：</span><br><span class="line">  food1=<span class="string">"黄焖鸡"</span></span><br><span class="line">  food2=<span class="string">'凉皮'</span></span><br><span class="line">  <span class="built_in">print</span>(<span class="string">'我今天吃%s,明天吃%s.'</span>%(food1,food2))</span><br><span class="line">  输出：我今天吃黄焖鸡,明天吃凉皮.</span><br><span class="line">%d表示整数内容，当%后的数字大于字符的宽度时，数字的数值等于空格数加字符的宽度。例如，6d是4格空格加两个字符的宽度,数字靠右对齐。当%后的数字小于数字的宽度时，%后的数字就没有意义了。%-6d是指数字的数值大于字符的宽度时，字符向相反的方向对齐（靠左对齐）。</span><br><span class="line">如：</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'prince is %6d'</span>%(10) )</span><br><span class="line">    输出：prince is     10</span><br><span class="line">%f是代表浮点型的内容（注意浮点型是一个近似值，所以结果也是近似值）</span><br><span class="line">如：</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">'price %f'</span>%10.2)</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">'price %.1f'</span>%10.2) </span><br><span class="line">   <span class="built_in">print</span>(<span class="string">'prince %.1f'</span>%10.58)</span><br><span class="line"> 输出：  price 10.200000</span><br><span class="line">        price 10.2</span><br><span class="line">        prince 10.6</span><br><span class="line">注：%d,%f是整型和字符型，所以在赋值的时候不用加引号，加引号的是字符串</span><br></pre></td></tr></table></figure>
+        <h2 id="print函数"><a href="#print函数" class="headerlink" title="print函数"></a>print函数</h2><h3 id="语法格式：print-value-…-sep-””-end-”-n”"><a href="#语法格式：print-value-…-sep-””-end-”-n”" class="headerlink" title="语法格式：print(value,….,sep=””,end=”\n”)"></a>语法格式：print(value,….,sep=””,end=”\n”)</h3><p>其中，value代表我们要输出的内容，可以是字符串，可以是数值等内容。<br>　   sep代表输出多个值之间的间隔符，默认使用空格隔开。我们可以重新定义其它内容，比如采用：#,，等。<br>     end代表输出语句的结束标识，默认使用了换行，我们可以重新定义其他内容，其输出的内容将不再进行换行操作。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">print</span>(1,2,3,sep=<span class="string">"#"</span>)</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">'adffa\nujia'</span>)</span><br></pre></td></tr></table></figure></p>
+<h3 id="print-函数的基本使用"><a href="#print-函数的基本使用" class="headerlink" title="print()函数的基本使用"></a>print()函数的基本使用</h3><p>####print（）常用输出方式：<br>print(‘hello’),print(123)等</p>
+<p>####字符串格式化：%s %d %f<br>%s:代表字符串内容，其中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ food1=<span class="string">"黄焖鸡"</span></span><br><span class="line">  food2=<span class="string">'凉皮'</span></span><br><span class="line">  <span class="built_in">print</span>(<span class="string">'我今天吃%s,明天吃%s.'</span>%(food1,food2))</span><br></pre></td></tr></table></figure></p>
+<p>  输出：我今天吃黄焖鸡,明天吃凉皮.</p>
+<p>%d:表示整数内容，当%后的数字大于字符的宽度时，数字的数值等于空格数加字符的宽度。例如，6d是4格空格加两个字符的宽度,数字靠右对齐。当%后的数字小于数字的宽度时，%后的数字就没有意义了。%-6d是指数字的数值大于字符的宽度时，字符向相反的方向对齐（靠左对齐）。</p>
+<pre><code class="bash"><span class="built_in">print</span>(<span class="string">'prince is %6d'</span>%(10) )
+</code></pre>
+<pre><code>输出：prince is     10
+</code></pre><p>%f是代表浮点型的内容（注意浮点型是一个近似值，所以结果也是近似值）</p>
+<pre><code class="bash"><span class="built_in">print</span>(<span class="string">'price %f'</span>%10.2)
+<span class="built_in">print</span>(<span class="string">'price %.1f'</span>%10.2) 
+<span class="built_in">print</span>(<span class="string">'prince %.1f'</span>%10.58)
+</code></pre>
+<p> 输出：  price 10.200000<br>        price 10.2<br>        prince 10.6<br>注：%d,%f是整型和字符型，所以在赋值的时候不用加引号，加引号的是字符串</p>
 
       
 
