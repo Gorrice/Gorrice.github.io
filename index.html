@@ -157,6 +157,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-qishiliu" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/16/qishiliu/">Python 中的双重for循环应用 II</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/16/qishiliu/" class="archive-article-date">
+  	<time datetime="2018-07-16T11:12:37.941Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="双重for循环基础训练"><a href="#双重for循环基础训练" class="headerlink" title="双重for循环基础训练"></a>双重for循环基础训练</h2><h3 id="输出1到10的阶乘之和"><a href="#输出1到10的阶乘之和" class="headerlink" title="输出1到10的阶乘之和"></a>输出1到10的阶乘之和</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sum1=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">11</span>):</span><br><span class="line">    sum2=<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>,i+<span class="number">1</span>):</span><br><span class="line">        sum2=j*sum2</span><br><span class="line">    sum1=sum1+sum2</span><br><span class="line">print(sum1)</span><br></pre></td></tr></table></figure>
+<p>注意两点：<br>1.sum2=1 是在外循环里。 同理当sum2在外面时，sum2不会被重新赋值。<br>2.sum1=sum1+sum2是与内循环同等级的。 当sum1与sum2同等级时，sum1不会被重新赋值。<br>在这种嵌套表示的过程中，变量的位置尤为重要，通用原则为：如果变量的值需要通过外层循环来获取或生成，那么我们可以将其设为全局变量，即与外层循环for同等级的变量，如果变量需要在内层循环中生成或获取，我们通常会在外循环中声明，即与内循环同级。</p>
+<h3 id="输出1到10的阶乘之积"><a href="#输出1到10的阶乘之积" class="headerlink" title="输出1到10的阶乘之积"></a>输出1到10的阶乘之积</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sum1=<span class="number">0</span></span><br><span class="line">sum2=<span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">11</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>,i+<span class="number">1</span>):</span><br><span class="line">        sum2=j*sum2</span><br><span class="line">    sum1=sum1+sum2</span><br><span class="line">print(sum1)</span><br></pre></td></tr></table></figure>
+<p>sum2不会被重新赋值。即算出来的是乘积。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/16/qishiliu/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-four" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -177,7 +243,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="基础双重for循环训练"><a href="#基础双重for循环训练" class="headerlink" title="基础双重for循环训练"></a>基础双重for循环训练</h2><h3 id="训练一"><a href="#训练一" class="headerlink" title="训练一"></a>训练一</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">5</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">5</span>):</span><br><span class="line">        print(<span class="string">'*'</span>,end=<span class="string">' '</span>)</span><br><span class="line">    print()</span><br></pre></td></tr></table></figure>
+        <h2 id="双重for循环基础训练"><a href="#双重for循环基础训练" class="headerlink" title="双重for循环基础训练"></a>双重for循环基础训练</h2><h3 id="训练一"><a href="#训练一" class="headerlink" title="训练一"></a>训练一</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">5</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">5</span>):</span><br><span class="line">        print(<span class="string">'*'</span>,end=<span class="string">' '</span>)</span><br><span class="line">    print()</span><br></pre></td></tr></table></figure>
 <p>输出：<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">* * * * *</span><br><span class="line">* * * * *</span><br><span class="line">* * * * *</span><br><span class="line">* * * * *</span><br><span class="line">* * * * *</span><br></pre></td></tr></table></figure></p>
 <h3 id="训练二"><a href="#训练二" class="headerlink" title="训练二"></a>训练二</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">5</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>,i+<span class="number">1</span>):</span><br><span class="line">        print(<span class="string">'*'</span>,end=<span class="string">' '</span>)</span><br><span class="line">    print()</span><br></pre></td></tr></table></figure>
 <p>输出<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*</span><br><span class="line">* *</span><br><span class="line">* * *</span><br><span class="line">* * * *</span><br><span class="line">* * * * *</span><br></pre></td></tr></table></figure></p>
