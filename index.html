@@ -157,6 +157,78 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-shijiu" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/19/shijiu/">集合 元组</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/19/shijiu/" class="archive-article-date">
+  	<time datetime="2018-07-19T01:15:44.185Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><h3 id="集合的概念"><a href="#集合的概念" class="headerlink" title="集合的概念"></a>集合的概念</h3><p>集合set是一个无序的数据集合，可以存储各种数据类型的元素，同时可以对集合中的元素进行新增、删除等操作，因此集合的长度是可变的。并且集合是不允许有重复元素，如果出现重复元素，除去第一个元素之外，都会被集合所忽略<br>注意：set是无序的，即存储元素到set的顺序与这些元素输出的顺序无关。set仍然是采用哈希算法，对这些元素进行存储的。</p>
+<h3 id="集合的声明与赋值"><a href="#集合的声明与赋值" class="headerlink" title="集合的声明与赋值"></a>集合的声明与赋值</h3><p>1）set1 = {1,2,3}   生成一个集合<br>2）set1 = set({1,2,3})<br>3)set1 = set()  生成一个空集合，<br>注意集合只能通过set()函数来生成空集合，而不是通过set1 = {},因为字典和集合的定界符同样是{}，这个表达式会生成一个空字典。</p>
+<h3 id="集合的操作"><a href="#集合的操作" class="headerlink" title="集合的操作"></a>集合的操作</h3><h4 id="元素的增加-add"><a href="#元素的增加-add" class="headerlink" title="元素的增加 add()"></a>元素的增加 add()</h4><p>函数格式：set.add(元素)<br>返回值：无返回值<br>结果：集合元素增加一个</p>
+<pre><code class="bash">set1=&gt;{1, 2, 3}
+set1.add(4)
+{1, 2, 3, 4}
+</code></pre>
+<h4 id="集合的删除"><a href="#集合的删除" class="headerlink" title="集合的删除"></a>集合的删除</h4><p>第一种：remove()<br>函数格式：set.remove(元素)<br>返回值：无返回值<br>注：和list里面的用法是一样的。<br>第二种：discard(key)<br>discard(key)也可删除元素，不同的是，如果删除的元素不在集合中，remove会报错，discard不会报错。</p>
+<h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><h3 id="元组的概念"><a href="#元组的概念" class="headerlink" title="元组的概念"></a>元组的概念</h3><p>元组是值的有序序列，里面可以存储各种数据类型的元素。但是元组一旦被赋值后，其内容就不可被改变。</p>
+<h3 id="声明与赋值"><a href="#声明与赋值" class="headerlink" title="声明与赋值"></a>声明与赋值</h3><p>第一种，tup = a,b,c,d<br>第二种，tup = (a,b,c,d) 推荐使用该种声明方式。<br>第三种，tup = tuple() 声明一个空的元组对象<br>注意：元组在赋值时，且元素只有一个时，具体情况如下：<br>tuple1 = (1,)或tuple1 = 1,一定要在元素后面加上一个,号，与普通变量赋值进行区分。不加会被默认为是数值型。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/19/shijiu/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-shiqi" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
