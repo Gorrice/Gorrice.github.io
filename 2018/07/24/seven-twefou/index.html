@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>函数 | 日常技术博客</title>
+  <title>嵌套 | 日常技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="练习11def 练习112345678910def f1():    def f2():        def f3():            print(&apos;in f3&apos;)        print(&apos;in f2&apos;)        f3()    print(&apos;in f1&apos;)    f2()f1() 输出：in f1in f2in f3 即等于：123456789def f1():    pri">
+  <meta name="description" content="嵌套的小陷阱练习112345678910def f1():    def f2():        def f3():            print(&apos;in f3&apos;)#5.输出        print(&apos;in f2&apos;)#3.print是f2的代码块输出        f3()#4.在f2的代码块里发现f3 调用f3    print(&apos;in f1&apos;)    f2()#2.f1函数里面发现f2">
 <meta name="keywords" content="Python、爬虫、Web开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="函数">
+<meta property="og:title" content="嵌套">
 <meta property="og:url" content="http://yoursite.com/2018/07/24/seven-twefou/index.html">
 <meta property="og:site_name" content="日常技术博客">
-<meta property="og:description" content="练习11def 练习112345678910def f1():    def f2():        def f3():            print(&apos;in f3&apos;)        print(&apos;in f2&apos;)        f3()    print(&apos;in f1&apos;)    f2()f1() 输出：in f1in f2in f3 即等于：123456789def f1():    pri">
+<meta property="og:description" content="嵌套的小陷阱练习112345678910def f1():    def f2():        def f3():            print(&apos;in f3&apos;)#5.输出        print(&apos;in f2&apos;)#3.print是f2的代码块输出        f3()#4.在f2的代码块里发现f3 调用f3    print(&apos;in f1&apos;)    f2()#2.f1函数里面发现f2">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-24T07:07:10.191Z">
+<meta property="og:updated_time" content="2018-07-27T00:53:44.066Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="函数">
-<meta name="twitter:description" content="练习11def 练习112345678910def f1():    def f2():        def f3():            print(&apos;in f3&apos;)        print(&apos;in f2&apos;)        f3()    print(&apos;in f1&apos;)    f2()f1() 输出：in f1in f2in f3 即等于：123456789def f1():    pri">
+<meta name="twitter:title" content="嵌套">
+<meta name="twitter:description" content="嵌套的小陷阱练习112345678910def f1():    def f2():        def f3():            print(&apos;in f3&apos;)#5.输出        print(&apos;in f2&apos;)#3.print是f2的代码块输出        f3()#4.在f2的代码块里发现f3 调用f3    print(&apos;in f1&apos;)    f2()#2.f1函数里面发现f2">
   
     <link rel="alternative" href="/atom.xml" title="日常技术博客" type="application/atom+xml">
   
@@ -166,7 +166,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      函数
+      嵌套
     </h1>
   
 
@@ -179,17 +179,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="练习1"><a href="#练习1" class="headerlink" title="练习1"></a>练习1</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="练习1-1"><a href="#练习1-1" class="headerlink" title="练习1"></a>练习1</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def f1():</span><br><span class="line">    def f2():</span><br><span class="line">        def f3():</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'in f3'</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'in f2'</span>)</span><br><span class="line">        f3()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'in f1'</span>)</span><br><span class="line">    f2()</span><br><span class="line"></span><br><span class="line">f1()</span><br></pre></td></tr></table></figure>
+        <h2 id="嵌套的小陷阱"><a href="#嵌套的小陷阱" class="headerlink" title="嵌套的小陷阱"></a>嵌套的小陷阱</h2><h3 id="练习1"><a href="#练习1" class="headerlink" title="练习1"></a>练习1</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def f1():</span><br><span class="line">    def f2():</span><br><span class="line">        def f3():</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'in f3'</span>)<span class="comment">#5.输出</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'in f2'</span>)<span class="comment">#3.print是f2的代码块输出</span></span><br><span class="line">        f3()<span class="comment">#4.在f2的代码块里发现f3 调用f3</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'in f1'</span>)</span><br><span class="line">    f2()<span class="comment">#2.f1函数里面发现f2调用f2</span></span><br><span class="line"></span><br><span class="line">f1()   <span class="comment">#1.调用f1函数输出 in f1</span></span><br></pre></td></tr></table></figure>
 <p>输出：<br>in f1<br>in f2<br>in f3</p>
 <p>即等于：<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'in f1'</span>)</span><br><span class="line">f1()</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">()</span>:</span></span><br><span class="line">        print(<span class="string">'in f2'</span>)</span><br><span class="line">    f2()</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">f3</span><span class="params">()</span>:</span></span><br><span class="line">            print(<span class="string">'in f3'</span>)</span><br><span class="line">        f3()</span><br></pre></td></tr></table></figure></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+<h3 id="练习二"><a href="#练习二" class="headerlink" title="练习二"></a>练习二</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">fun1</span><span class="params">()</span>:</span></span><br><span class="line">        print(<span class="string">'in fun1'</span>)<span class="comment">#3.在fun1函数里面输出 </span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">fun2</span><span class="params">()</span>:</span></span><br><span class="line">            print(<span class="string">'in fun2'</span>)<span class="comment">#4.输出 </span></span><br><span class="line">        fun2() <span class="comment">#4.然后调用fun2函数</span></span><br><span class="line">    fun1()  <span class="comment">#2.在fun里先调用fun1函数      </span></span><br><span class="line">    print(<span class="string">'in fun'</span>)<span class="comment">#5.最后再返回输出</span></span><br><span class="line"></span><br><span class="line">fun()<span class="comment">#1.调用fun()</span></span><br></pre></td></tr></table></figure>
       
 
       
