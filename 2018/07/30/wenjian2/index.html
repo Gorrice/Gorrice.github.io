@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 日常技术博客</title>
+  <title>二进制文件 | 日常技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Python、爬虫、Web开发">
-<meta property="og:type" content="website">
-<meta property="og:title" content="日常技术博客">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="struct模块的pack()方法使用步骤：第一，对要写入到文件中的各种类型数据，进行统一打包struct.pack(‘if’,10,12.4),其中，i:代表了整数，f：代表了浮点数  ？：代表布尔型第二，使用write()写入，写入后以二进制的方式进行文件存储。第三，读取时，首先采用struct.unpack()来解包里面包含的相关数据，返回一个序列，即写入时的顺序，与读取时的顺序应该一致。注">
+<meta name="keywords" content="Python、爬虫、Web开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二进制文件">
+<meta property="og:url" content="http://yoursite.com/2018/07/30/wenjian2/index.html">
 <meta property="og:site_name" content="日常技术博客">
+<meta property="og:description" content="struct模块的pack()方法使用步骤：第一，对要写入到文件中的各种类型数据，进行统一打包struct.pack(‘if’,10,12.4),其中，i:代表了整数，f：代表了浮点数  ？：代表布尔型第二，使用write()写入，写入后以二进制的方式进行文件存储。第三，读取时，首先采用struct.unpack()来解包里面包含的相关数据，返回一个序列，即写入时的顺序，与读取时的顺序应该一致。注">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-31T03:47:02.818Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="日常技术博客">
+<meta name="twitter:title" content="二进制文件">
+<meta name="twitter:description" content="struct模块的pack()方法使用步骤：第一，对要写入到文件中的各种类型数据，进行统一打包struct.pack(‘if’,10,12.4),其中，i:代表了整数，f：代表了浮点数  ？：代表布尔型第二，使用write()写入，写入后以二进制的方式进行文件存储。第三，读取时，首先采用struct.unpack()来解包里面包含的相关数据，返回一个序列，即写入时的顺序，与读取时的顺序应该一致。注">
   
     <link rel="alternative" href="/atom.xml" title="日常技术博客" type="application/atom+xml">
   
@@ -155,160 +159,160 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-wenjian2" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      二进制文件
+    </h1>
+  
+
+        
+        <a href="/2018/07/30/wenjian2/" class="archive-article-date">
+  	<time datetime="2018-07-30T04:49:31.600Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-30</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="struct模块的pack-方法"><a href="#struct模块的pack-方法" class="headerlink" title="struct模块的pack()方法"></a>struct模块的pack()方法</h2><p>使用步骤：<br>第一，对要写入到文件中的各种类型数据，进行统一打包<br>struct.pack(‘if’,10,12.4),其中，i:代表了整数，f：代表了浮点数  ？：代表布尔型<br>第二，使用write()写入，写入后以二进制的方式进行文件存储。<br>第三，读取时，首先采用struct.unpack()来解包里面包含的相关数据，返回一个序列，即写入时的顺序，与读取时的顺序应该一致。<br>注意：需要将所有写入的数据，一次性都封装到一个bytes中，因为在Python中没有byte的概念，所以需要第三方的模块进行封装。<br>例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import struct</span><br><span class="line">a=100</span><br><span class="line">b=True</span><br><span class="line">c=2.12</span><br><span class="line"></span><br><span class="line">sn=struct.pack(<span class="string">'if?'</span>,a,c,b)<span class="comment">#fmt 一种格式，i代表整型 ?代表布尔型 f代表浮点型</span></span><br><span class="line">f=open(<span class="string">'my1.dat'</span>,<span class="string">'wb'</span>)<span class="comment">#文件扩展名不再是txt.可以是dat也可以不写.写入方式‘wb'</span></span><br><span class="line">f.write(sn)<span class="comment">#只能用write写入，是字节</span></span><br><span class="line"><span class="comment">#f.write(s)</span></span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f=open(<span class="string">'my1.dat'</span>,<span class="string">'rb'</span>)</span><br><span class="line">q=f.read(9)<span class="comment">#只能用read来读取,i整型是4个字节，f也是四个字节，？是一个字节。</span></span><br><span class="line">a=struct.unpack(<span class="string">'if?'</span>,q)</span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<h2 id="pickle模块的dump-方法"><a href="#pickle模块的dump-方法" class="headerlink" title="pickle模块的dump()方法"></a>pickle模块的dump()方法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import pickle <span class="comment">#引用</span></span><br><span class="line">b=True</span><br><span class="line">a=<span class="string">'hello'</span></span><br><span class="line">c=12</span><br><span class="line">d=12.12</span><br><span class="line">f=open(<span class="string">'my3.dat'</span>,<span class="string">'wb'</span>)</span><br><span class="line">pickle.dump(a,f)</span><br><span class="line">pickle.dump(b,f)</span><br><span class="line">pickle.dump(c,f)</span><br><span class="line">pickle.dump(d,f)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f=open(<span class="string">'my3.dat'</span>,<span class="string">'rb'</span>)</span><br><span class="line">a=pickle.load(f)</span><br><span class="line">b=pickle.load(f)</span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<h2 id="文本中seek的用法"><a href="#文本中seek的用法" class="headerlink" title="文本中seek的用法"></a>文本中seek的用法</h2><p>函数格式：seek(n)<br>返回值：返回指定的位置<br>说明：通过指定元素的位置，将文件指针移动到该位置。<br>seek()函数有三个固定值，分别为：0,1,2<br>0：文件的开头<br>1：文件当前的位置<br>2：文件的结尾位置<br>seek(0,2):代表着将指针定位到文件尾，然后进行添加操作<br>seek(0,1):代表着在当前指针的位置，进行替换<br>例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="string">'我是'</span></span><br><span class="line">b=<span class="string">'天才'</span></span><br><span class="line">f=open(<span class="string">'mt.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line">f.write(a)</span><br><span class="line">f.write(b)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f=open(<span class="string">'mt.txt'</span>,<span class="string">'r+'</span>)</span><br><span class="line">a=f.read()</span><br><span class="line">f.seek(4)</span><br><span class="line">f.write(<span class="string">'你好'</span>)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<p>输出：文本已变成  我是你好</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/16/four/" class="archive-article-date">
-  	<time datetime="2018-07-16T08:02:53.378Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/16/four/">Python 中的双重for循环应用</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/30/wenjian2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/13/three/" class="archive-article-date">
-  	<time datetime="2018-07-13T02:28:20.657Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-13</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/07/27/wenjian1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">文件I</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/13/three/">Python中基本的数据类型</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/12/pythontwo/" class="archive-article-date">
-  	<time datetime="2018-07-12T14:04:06.044Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/12/pythontwo/">Python 中的变量</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/12/pythontestone/" class="archive-article-date">
-  	<time datetime="2018-07-12T00:20:05.744Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/12/pythontestone/">Python 的基础语法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/09/hello-world/" class="archive-article-date">
-  	<time datetime="2018-07-09T12:19:20.542Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/09/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -332,8 +336,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
